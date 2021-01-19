@@ -1,0 +1,74 @@
+[
+    {
+    "precio": 1,
+    "id": 1,
+    "name": "Desayuno",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 2,
+    "name": "Ensalada Cesar",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 3,
+    "name": "Pasta con queso",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 4,
+    "name": "Burguer",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 5,
+    "name": "Pollo asado",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 6,
+    "name": "Pizza",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 7,
+    "name": "Lubina a la plancha",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 8,
+    "name": "Tarta de limon",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 9,
+    "name": "Tarta de queso",
+    "description": "Lorem"
+    },
+    {
+    "precio": 1,
+    "id": 10,
+    "name": "Vino tinto",
+    "description": "Lorem"
+    },
+    {
+    "precio": 2,
+    "id": 11,
+    "name": "Vino blanco",
+    "description": "Lorem"
+    },
+    {
+    "precio": 2,
+    "id": 12,
+    "name": "Cerveza",
+    "description": "Lorem"
+    }
+]
