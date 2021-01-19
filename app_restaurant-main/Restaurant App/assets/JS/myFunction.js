@@ -1,4 +1,4 @@
-'use strcit'
+'use strict'
 
 const items = document.querySelector('#items');
 const templateCard = document.querySelector('#template-card').content;
