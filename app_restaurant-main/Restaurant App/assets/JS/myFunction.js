@@ -1,6 +1,8 @@
 'use strict'
 
-const items = document.getElementById('items');
+const items = document.querySelector('#items');
+const templateCard = document.querySelector('#template-products').content;
+const fragment = document.createDocumentFragment();
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
@@ -17,16 +19,13 @@ const fetchData = async () => {
 }
 
 const pintData = data => {
-    const templateCard = document.getElementById('template-card');
-    const fragment = document.createDocumentFragment();
-    console.log(templateCard)
     data.forEach ( product => {
-        console.log(product)
         templateCard.querySelector('h3').textContent = product.name;
+        templateCard.querySelector('p').textContent = product.precio;
 
         const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
-    })
+    });
 
     items.appendChild(fragment)
 };
