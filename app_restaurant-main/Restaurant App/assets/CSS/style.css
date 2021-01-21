@@ -218,8 +218,13 @@ footer nav ul {
         z-index: 1000;
 }
 
-@media (max-width: 600px) {
-    . {
-      display: none;
-    }
-  }
+/* CSS BOX */
+
+.container {
+    text-align: center;
+}
+
+.container table tr th {
+    margin-left: 80px;
+}
+

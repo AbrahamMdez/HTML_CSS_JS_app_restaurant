@@ -2,6 +2,9 @@
 
 const items = document.querySelector('#items');
 const templateCard = document.querySelector('#template-products').content;
+const templateBox = document.querySelector('#template-box').content;
+const cards = document.querySelector('#box-added');
+const price = document.querySelector('#footer-price');
 const fragment = document.createDocumentFragment();
 let box = {};
 
@@ -19,9 +22,9 @@ const fetchData = async () => {
         const data = await res.json();
         pintData(data)
     } catch (error) {
-        console.log(error)
-    }
-}
+        console.log(error);
+    };
+};
 
 const pintData = data => {
     data.forEach ( product => {
@@ -35,7 +38,7 @@ const pintData = data => {
         fragment.appendChild(clone);
     });
 
-    items.appendChild(fragment)
+    items.appendChild(fragment);
 };
 
 const addBox = e => {
@@ -44,7 +47,7 @@ const addBox = e => {
     que le indiquemos, nos dirá true o false
     console.log(e.target.classList.contains('btn-add-buy')); */
     if (e.target.classList.contains('btn-add-buy')) {
-        /* El parentElement, no coge lo que este envolviendo a lo que estamos seleccionnando,
+        /* El parentElement, nos coge lo que este envolviendo a lo que estamos seleccionnando,
         osea a su padre con todos sus hijos
         console.log(e.target.parentElement); */
         setBox(e.target.parentElement);
@@ -54,10 +57,10 @@ const addBox = e => {
     sucediendo en este momento que no sea el que queramos */
     e.stopPropagation();
     
-}
+};
 
 const setBox = obj => {
-    console.log(obj);
+    /* console.log(obj); */
     const product = {
         id: obj.querySelector('.btn-add-buy').dataset.id,
         title: obj.querySelector('h3').textContent,
@@ -68,6 +71,38 @@ const setBox = obj => {
         product.amounth = box[product.id].amounth + 1;
     }
 
-    box[product.id] = {...product}
-    console.log(box)
-}
+    box[product.id] = {...product};
+    addItemsBox();
+};
+
+const addItemsBox = () => {
+    console.log(box);
+    cards.innerHTML = "";
+    Object.values(box).forEach( product => {
+        templateBox.querySelector('th').textContent = product.id;
+        /* Aqui, como al td que queremos ir hay DOMSettableTokenList, le decimos que selecionamos a todos y vaya a la posicion 0 */
+        templateBox.querySelectorAll('td')[0].textContent = product.title;
+        templateBox.querySelectorAll('td')[1].textContent = product.amounth;
+        templateBox.querySelectorAll('td')[2].textContent = product.amounth * product.precio;
+        const clone = templateBox.cloneNode(true);
+        fragment.appendChild(clone);
+    });
+    cards.appendChild(fragment);
+
+    showPriceTotal();
+};
+
+/* const showPriceTotal = () => {
+    if (Object.keys(box).length === 0) {
+        price.innerHTML = `
+        <th>Carrito Vacio</th>
+        `
+    }
+
+    //Aqui estamos usando el metodo reductor, que va acompañado del metodo reductor, este metodo recibe una cantidad y
+    //mediante una funcion coge la cantidad acumulada y la suma a la cantidad
+    const nCantidad = Objetc.values(box).reduce((acc, { amounth }) => acc + amounth, 0);
+    const nPrice = Objetc.values(box).reduce((acc, { amounth, price }) => acc + amounth * price, 0);
+    console.log(nCantidad);
+    console.log(nPrice);
+}; */
