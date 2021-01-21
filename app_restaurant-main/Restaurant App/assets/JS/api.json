@@ -3,72 +3,84 @@
     "precio": 1,
     "id": 1,
     "name": "Desayuno",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/desayuno01.jpg"
     },
     {
     "precio": 1,
     "id": 2,
     "name": "Ensalada Cesar",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/ensalada01.jpg"
     },
     {
     "precio": 1,
     "id": 3,
     "name": "Pasta con queso",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/macarrones.jpg"
     },
     {
     "precio": 1,
     "id": 4,
     "name": "Burguer",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/Hamburguesa.jpg"
     },
     {
     "precio": 1,
     "id": 5,
     "name": "Pollo asado",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/pollo.jpg"
     },
     {
     "precio": 1,
     "id": 6,
     "name": "Pizza",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/pizza.jpg"
     },
     {
     "precio": 1,
     "id": 7,
     "name": "Lubina a la plancha",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/pescado.jpg"
     },
     {
     "precio": 1,
     "id": 8,
     "name": "Tarta de limon",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/pieLimon.jpg"
     },
     {
     "precio": 1,
     "id": 9,
     "name": "Tarta de queso",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/cheesecake.jpg"
     },
     {
     "precio": 1,
     "id": 10,
     "name": "Vino tinto",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/vinoTinto.jpg"
     },
     {
     "precio": 2,
     "id": 11,
     "name": "Vino blanco",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/vinoBlanco.jpg"
     },
     {
     "precio": 2,
     "id": 12,
     "name": "Cerveza",
-    "description": "Lorem"
+    "description": "Lorem",
+    "url": "../assets/img/dishes/cerveza.jpg"
     }
 ]
