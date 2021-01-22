@@ -80,7 +80,7 @@ const addItemsBox = () => {
     cards.innerHTML = "";
     Object.values(box).forEach( product => {
         templateBox.querySelector('th').textContent = product.id;
-        /* Aqui, como al td que queremos ir hay DOMSettableTokenList, le decimos que selecionamos a todos y vaya a la posicion 0 */
+        /* Aqui, como hay mas td que queramos ir hay, le decimos que selecionamos a todos y vaya a la posicion 0 */
         templateBox.querySelectorAll('td')[0].textContent = product.title;
         templateBox.querySelectorAll('td')[1].textContent = product.amounth;
         templateBox.querySelectorAll('td')[2].textContent = product.amounth * product.precio;
@@ -92,17 +92,17 @@ const addItemsBox = () => {
     /* showPriceTotal(); */
 };
 
-/* const showPriceTotal = () => {
+const showPriceTotal = () => {
     if (Object.keys(box).length === 0) {
         price.innerHTML = `
         <th>Carrito Vacio</th>
         `
     }
 
-    //Aqui estamos usando el metodo reductor, que va acompañado del metodo reductor, este metodo recibe una cantidad y
-    //mediante una funcion coge la cantidad acumulada y la suma a la cantidad
+    //Aqui estamos usando el metodo reductor, que va acompañado del metodo acumulador, este metodo recibe una cantidad y
+    //mediante una funcion coge la cantidad acumulada y la suma
     const nCantidad = Objetc.values(box).reduce((acc, { amounth }) => acc + amounth, 0);
     const nPrice = Objetc.values(box).reduce((acc, { amounth, price }) => acc + amounth * price, 0);
     console.log(nCantidad);
     console.log(nPrice);
-}; */
+};
