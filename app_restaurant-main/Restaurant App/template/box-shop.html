@@ -91,20 +91,33 @@
                     <th>Cantidad</th>
                     <th>Total</th>
                 </tr>
+                <hr/>
                 <tbody id="box-added"></tbody>
+                <tr id="msg-empty">
+                    <th>Carrito Vacio</th>
+                </tr>
             </table>
             <template id="template-box">
-                <tr class="table-items"></tr>
-                    <th></th>
+                <tr class="tr-box">
+                    <th class="tr-box-amounth"></th>
+                    <td class="tr-box-title"></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
-            </template>
-            <template>
-                
-            </template>
+            </template><hr/>
         </div>
+        <template id="box-foot">
+            <th>Total Productos</th>
+            <td></td>
+            <td>
+                <button id="empty-box">
+                    Vaciar todo
+                </button>
+            </td>
+            <td><span>5000</span></td>
+        </template>
+        
         <section id="items"></section>
         <template id="template-products">
             <div class="article-dish">

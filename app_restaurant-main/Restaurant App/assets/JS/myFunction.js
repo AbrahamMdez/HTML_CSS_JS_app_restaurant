@@ -3,7 +3,9 @@
 const items = document.querySelector('#items');
 const templateCard = document.querySelector('#template-products').content;
 const templateBox = document.querySelector('#template-box').content;
+const msgEmptyBox = document.querySelector('#msg-empty');
 const cards = document.querySelector('#box-added');
+const totalProducts = document.querySelector('#box-foot').content;
 const price = document.querySelector('#footer-price');
 const fragment = document.createDocumentFragment();
 let box = {};
@@ -33,11 +35,11 @@ const pintData = data => {
         templateCard.querySelector('h5').textContent = product.description;
         templateCard.querySelector('img').setAttribute("src", product.url);
         templateCard.querySelector('.btn-add-buy').dataset.id = product.id;
-
+        
         const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
     });
-
+    
     items.appendChild(fragment);
 };
 
@@ -64,7 +66,8 @@ const setBox = obj => {
     const product = {
         id: obj.querySelector('.btn-add-buy').dataset.id,
         title: obj.querySelector('h3').textContent,
-        amounth: 1
+        amounth: 1,
+        precio: obj.querySelector('p').textContent
     }
 
     if (box.hasOwnProperty(product.id)) {
@@ -83,26 +86,41 @@ const addItemsBox = () => {
         /* Aqui, como hay mas td que queramos ir hay, le decimos que selecionamos a todos y vaya a la posicion 0 */
         templateBox.querySelectorAll('td')[0].textContent = product.title;
         templateBox.querySelectorAll('td')[1].textContent = product.amounth;
-        templateBox.querySelectorAll('td')[2].textContent = product.amounth * product.precio;
+        templateBox.querySelectorAll('td')[2].textContent = product.precio;
+        templateBox.querySelectorAll('td')[3].textContent = product.amounth * product.precio;
         const clone = templateBox.cloneNode(true);
         fragment.appendChild(clone);
     });
     cards.appendChild(fragment);
 
-    /* showPriceTotal(); */
+    showPriceTotal();
 };
 
 const showPriceTotal = () => {
+    msgEmptyBox.innerHTML = '';
     if (Object.keys(box).length === 0) {
-        price.innerHTML = `
+        msgEmptyBox.innerHTML = `
         <th>Carrito Vacio</th>
         `
-    }
+    };
 
     //Aqui estamos usando el metodo reductor, que va acompañado del metodo acumulador, este metodo recibe una cantidad y
     //mediante una funcion coge la cantidad acumulada y la suma
-    const nCantidad = Objetc.values(box).reduce((acc, { amounth }) => acc + amounth, 0);
-    const nPrice = Objetc.values(box).reduce((acc, { amounth, price }) => acc + amounth * price, 0);
-    console.log(nCantidad);
-    console.log(nPrice);
+    const nAmounth = Object.values(box).reduce((acc, { amounth }) => acc + amounth, 0);
+    const nPrice = Object.values(box).reduce((acc, { amounth, precio }) => acc + amounth * precio, 0);
+    /* console.log(nCantidad);
+    console.log(nPrice); */
+
+    totalProducts.querySelectorAll('td')[0].textContent = nAmounth;
+    totalProducts.querySelector('span').textContent = nPrice;
+
+    const clone = totalProducts.cloneNode(true);
+    fragment.appendChild(clone);
+    msgEmptyBox.appendChild(fragment);
+
+    /* const emptyBox = document.querySelector('#empty-box');
+    emptyBox.addEventListener('click', () => {
+        box = {};
+        showPriceTotal();
+    }) */
 };

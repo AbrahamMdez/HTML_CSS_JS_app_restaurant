@@ -228,6 +228,19 @@ footer nav ul {
 }
 
 .container table tr th {
-    margin-left: 80px;
+    padding: 0.5vw;
 }
 
+.tr-box {
+    background: lightcoral;
+}
+
+.tr-box-amounth,
+tr-box-title {
+    width: 5px;
+    font-size: 0.8em;
+}
+
+#empty-box {
+    background-color: red;
+}
