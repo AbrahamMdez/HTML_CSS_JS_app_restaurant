@@ -76,7 +76,7 @@ const setBox = obj => {
 };
 
 const addItemsBox = () => {
-    console.log(box);
+    /* console.log(box); */
     cards.innerHTML = "";
     Object.values(box).forEach( product => {
         templateBox.querySelector('th').textContent = product.id;
@@ -89,7 +89,7 @@ const addItemsBox = () => {
     });
     cards.appendChild(fragment);
 
-    showPriceTotal();
+    /* showPriceTotal(); */
 };
 
 /* const showPriceTotal = () => {

@@ -80,7 +80,7 @@ section {
 }
 
 .article-dish {
-    width: 60vw;
+    width: 75vw;
     border-radius: 15px;
     margin-top: 4vh;
     margin: 6vh 10vw;
@@ -111,17 +111,20 @@ section {
     color: var(--price-color);
     font-weight: bold;
     margin-top: 2vh;
-    margin-left: 2vw;
+    margin-left: 7vw;
+    padding: 2vh 0 2vh 0px;
 }
 
 .dish-title {
     grid-area: h;
-    margin-left: 2vw;
+    margin-left: 7vw;
+    padding: 2vh 0 2vh 0px;
 }
 
 .descript-ingredients {
     grid-area: p1;
-    margin-left: 2vw;
+    margin-left: 7vw;
+    padding: 2vh 0 2vh 0px;
 }
 
 .btn-amounth {
@@ -159,7 +162,7 @@ section {
 .btn-add-buy {
     grid-area: b;
     height: 7vh;
-    width: 4vw;
+    width: 9vw;
     align-self: center;
     border-radius: 6px;
     margin-right: 2vw;
